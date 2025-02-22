@@ -8,12 +8,14 @@ destinations:
     auth:
       type: basic
       username: "356978"
+      password: ""
   - name: grafana-cloud-logs
     type: loki
     url: https://logs-prod3.grafana.net/loki/api/v1/push
     auth:
       type: basic
       username: "177459"
+      password: ""
 global:
   platform: openshift
 clusterMetrics:
