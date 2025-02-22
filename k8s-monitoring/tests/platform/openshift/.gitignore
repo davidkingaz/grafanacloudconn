@@ -1,6 +1,0 @@
-*-installer-files/
-deployments/grafana-cloud-credentials.yaml
-deployments/test-variables.yaml
-flux-manifest.yaml
-kubeconfig.yaml
-.randomNumber

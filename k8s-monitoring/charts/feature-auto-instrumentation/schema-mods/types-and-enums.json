@@ -1,5 +1,0 @@
-{
-  "properties": {
-    "beyla": {"properties": {"preset": {"enum": ["application", "network"]}}}
-  }
-}

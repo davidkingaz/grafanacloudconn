@@ -1,3 +1,0 @@
-# Annotation-based autodiscovery using Prometheus Annotations
-
-This example shows how to enable the annotation-based autodiscovery feature using Prometheus-style annotations.

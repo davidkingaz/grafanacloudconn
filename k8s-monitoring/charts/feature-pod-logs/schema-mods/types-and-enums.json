@@ -1,5 +1,0 @@
-{
-  "properties": {
-    "gatherMethod": { "enum": ["volumes", "kubernetesApi"] }
-  }
-}

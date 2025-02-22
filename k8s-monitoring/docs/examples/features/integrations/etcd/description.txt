@@ -1,3 +1,0 @@
-# Integration: etcd
-
-This example demonstrates how to gather metrics from [etcd](https://etcd.io/).
