@@ -1,0 +1,61 @@
+---
+cluster:
+  name: ACPWWTATC
+destinations:
+  - name: grafana-cloud-metrics
+    type: prometheus
+    url: https://prometheus-prod-10-prod-us-central-0.grafana.net/api/prom/push
+    auth:
+      type: basic
+      username: "356978"
+  - name: grafana-cloud-logs
+    type: loki
+    url: https://logs-prod3.grafana.net/loki/api/v1/push
+    auth:
+      type: basic
+      username: "177459"
+global:
+  platform: openshift
+clusterMetrics:
+  enabled: true
+  kepler:
+    enabled: true
+  node-exporter:
+    enabled: true
+    deploy: false
+    namespace: openshift-monitoring
+    bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
+    service:
+      scheme: https
+      portName: https-main
+  kube-state-metrics:
+    enabled: true
+    deploy: false
+    namespace: openshift-monitoring
+    bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
+    service:
+      scheme: https
+      portName: https
+prometheusOperatorObjects:
+  enabled: true
+clusterEvents:
+  enabled: true
+nodeLogs:
+  enabled: true
+podLogs:
+  enabled: true
+integrations:
+  alloy:
+    instances:
+      - name: alloy
+        labelSelectors:
+          app.kubernetes.io/name:
+            - alloy-metrics
+            - alloy-singleton
+            - alloy-logs
+alloy-metrics:
+  enabled: true
+alloy-singleton:
+  enabled: true
+alloy-logs:
+  enabled: true
